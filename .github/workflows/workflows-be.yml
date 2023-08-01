@@ -20,3 +20,13 @@ jobs:
         uses: golangci/golangci-lint-action@v3
         with:
           version: v1.46.2
+
+      - name: test
+        run: go test -coverprofile=coverage.out ./...
+
+      - name: check-coverage
+        run: |
+          SUM_COVERAGE=$(go test ./... --cover | awk '{if ($1 != "?") print $5; else print "0.0";}' | sed 's/\%//g' | awk '{s+=$1} END {printf "%.2f\n", s}')
+          SUM_TEST=$(go test ./... --cover | wc -l)
+          COVER_AVERAGE=$(echo "$SUM_COVERAGE/$SUM_TEST" | bc -l)
+          echo $COVER_AVERAGE
