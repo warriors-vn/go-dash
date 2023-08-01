@@ -76,3 +76,23 @@ func Test_findIndex_struct(t *testing.T) {
 	assert.Equal(t, 2, index)
 	assert.Equal(t, true, found)
 }
+
+func Test_findIndex_invalid_array(t *testing.T) {
+	array := int32(9)
+	target := int32(6)
+
+	index, found := findIndex(array, target)
+
+	assert.Equal(t, -1, index)
+	assert.Equal(t, false, found)
+}
+
+func Test_findIndex_not_found(t *testing.T) {
+	array := []int32{1, 2, 3, 8, 7, 6, 5, 9}
+	target := int32(10)
+
+	index, found := findIndex(array, target)
+
+	assert.Equal(t, -1, index)
+	assert.Equal(t, false, found)
+}
