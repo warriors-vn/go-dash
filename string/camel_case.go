@@ -1,10 +1,7 @@
 package string
 
 import (
-	"regexp"
 	"unicode"
-
-	"go-dash/constants"
 )
 
 // camelCase converts a string to camelCase format.
@@ -14,7 +11,7 @@ func camelCase(s string) string {
 	nextToUpper, result := false, ""
 
 	for _, char := range s {
-		if isMatch, err := regexp.MatchString(constants.PatternNumberAndAlphabet, string(char)); isMatch && err == nil {
+		if (char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z') || (char >= '0' && char <= '9') {
 			if nextToUpper {
 				result += string(unicode.ToUpper(char))
 				nextToUpper = false
