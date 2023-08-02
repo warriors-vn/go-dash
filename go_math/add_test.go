@@ -41,3 +41,9 @@ func Test_add_invalid_float32(t *testing.T) {
 
 	assert.Equal(t, 0, result)
 }
+
+func Test_add_invalid_type(t *testing.T) {
+	result := add(true, false)
+
+	assert.Equal(t, 0, result)
+}
