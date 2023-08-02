@@ -11,10 +11,7 @@ import (
 // It removes spaces, punctuation, and converts letters to lowercase.
 // Returns the kebab-case string and an error if the input string is empty.
 func kebabCase(s string) (string, error) {
-	regex, err := regexp.Compile(constants.PatternNumberAndAlphabet)
-	if err != nil {
-		return "", err
-	}
+	regex, _ := regexp.Compile(constants.PatternNumberAndAlphabet)
 
 	matches := regex.FindAllString(strings.ToLower(s), -1)
 
