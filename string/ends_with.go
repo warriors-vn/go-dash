@@ -4,7 +4,7 @@ import "go-dash/constants"
 
 func endsWith(str, target string, position ...int) (bool, error) {
 	pos := len(str)
-	if position != nil && len(position) > 0 {
+	if position != nil {
 		pos = position[0]
 	}
 
