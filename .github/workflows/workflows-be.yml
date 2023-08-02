@@ -30,3 +30,8 @@ jobs:
           SUM_TEST=$(go test ./... --cover | wc -l)
           COVER_AVERAGE=$(echo "$SUM_COVERAGE/$SUM_TEST" | bc -l)
           echo $COVER_AVERAGE
+
+      - name: upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
