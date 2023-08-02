@@ -1,0 +1,14 @@
+mode: set
+go-dash/string/ends_with.go:5.66,7.42 2 1
+go-dash/string/ends_with.go:11.2,11.20 1 1
+go-dash/string/ends_with.go:15.2,15.34 1 1
+go-dash/string/ends_with.go:19.2,19.18 1 1
+go-dash/string/ends_with.go:7.42,9.3 1 1
+go-dash/string/ends_with.go:11.20,13.3 1 1
+go-dash/string/ends_with.go:15.34,17.3 1 1
+go-dash/array/find_index.go:10.55,14.74 3 1
+go-dash/array/find_index.go:18.2,18.38 1 1
+go-dash/array/find_index.go:25.2,25.18 1 1
+go-dash/array/find_index.go:14.74,16.3 1 1
+go-dash/array/find_index.go:18.38,20.67 2 1
+go-dash/array/find_index.go:20.67,22.4 1 1
