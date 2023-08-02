@@ -23,6 +23,9 @@ go-dash/string/ends_with.go:23.2,23.18 1 1
 go-dash/string/ends_with.go:11.21,13.3 1 1
 go-dash/string/ends_with.go:15.20,17.3 1 1
 go-dash/string/ends_with.go:19.34,21.3 1 1
+go-dash/string/kebabCase.go:13.42,15.16 2 1
+go-dash/string/kebabCase.go:19.2,21.40 2 1
+go-dash/string/kebabCase.go:15.16,17.3 1 0
 go-dash/string/starts_with.go:9.68,11.21 2 1
 go-dash/string/starts_with.go:15.2,15.20 1 1
 go-dash/string/starts_with.go:19.2,19.34 1 1
