@@ -1,6 +1,6 @@
 package string
 
-import "go-dash/constants"
+import "github.com/warriors-vn/go-dash/constants"
 
 // endsWith checks if the string 'str' ends with the target string 'target' optionally
 // up to a specified 'position' in 'str'.

@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"go-dash/constants"
+	"github.com/warriors-vn/go-dash/constants"
 )
 
 func Test_endsWith_valid_not_position(t *testing.T) {

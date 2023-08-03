@@ -3,10 +3,10 @@ package go_math
 import (
 	"reflect"
 
-	"go-dash/constants"
+	"github.com/warriors-vn/go-dash/constants"
 )
 
-// maxInt finds and returns the maximum value from the given slice of integers 'i'.
+// MaxInt finds and returns the maximum value from the given slice of integers 'i'.
 func maxInt(i []int) int {
 	if len(i) == 0 {
 		return 0

@@ -3,7 +3,7 @@ package go_math
 import (
 	"reflect"
 
-	"go-dash/constants"
+	"github.com/warriors-vn/go-dash/constants"
 )
 
 // multiply calculates the product of the multiplier and subtrahend.

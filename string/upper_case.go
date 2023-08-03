@@ -4,7 +4,7 @@ import (
 	"regexp"
 	"strings"
 
-	"go-dash/constants"
+	"github.com/warriors-vn/go-dash/constants"
 )
 
 // upperCase converts all characters in the input string 's' to uppercase.

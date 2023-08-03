@@ -3,7 +3,7 @@ package go_math
 import (
 	"reflect"
 
-	"go-dash/constants"
+	"github.com/warriors-vn/go-dash/constants"
 )
 
 // sum calculates the sum of elements in a slice of numeric type.

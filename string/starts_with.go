@@ -1,6 +1,6 @@
 package string
 
-import "go-dash/constants"
+import "github.com/warriors-vn/go-dash/constants"
 
 // startsWith checks if the string 'str' starts with the target string 'target' optionally
 // from the specified 'position' in 'str'.

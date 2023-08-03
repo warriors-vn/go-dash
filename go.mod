@@ -1,4 +1,4 @@
-module go-dash
+module github.com/warriors-vn/go-dash
 
 go 1.18
 
