@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"go-dash/constants"
+	"github.com/warriors-vn/go-dash/constants"
 )
 
 func Test_inRange_invalid_number_and_start(t *testing.T) {

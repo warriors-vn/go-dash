@@ -3,7 +3,7 @@ package go_math
 import (
 	"reflect"
 
-	"go-dash/constants"
+	"github.com/warriors-vn/go-dash/constants"
 )
 
 // minInt finds and returns the minimum value from the given slice of integers 'i'.

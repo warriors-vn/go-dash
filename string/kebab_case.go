@@ -4,7 +4,7 @@ import (
 	"regexp"
 	"strings"
 
-	"go-dash/constants"
+	"github.com/warriors-vn/go-dash/constants"
 )
 
 // kebabCase converts a string to kebab-case format, where words are separated by hyphens.

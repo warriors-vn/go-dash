@@ -3,7 +3,7 @@ package number
 import (
 	"reflect"
 
-	"go-dash/constants"
+	"github.com/warriors-vn/go-dash/constants"
 )
 
 // inRange checks if a given number is within the specified range [start, end).

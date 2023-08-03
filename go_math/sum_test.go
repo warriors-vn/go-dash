@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"go-dash/constants"
+	"github.com/warriors-vn/go-dash/constants"
 )
 
 func Test_sum_valid_int(t *testing.T) {
