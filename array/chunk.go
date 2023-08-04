@@ -13,6 +13,10 @@ import (
 func chunk(array interface{}, size int) (interface{}, error) {
 	arrValue := reflect.ValueOf(array)
 
+	if size < 0 {
+		return nil, constants.ErrParamLessThanZero
+	}
+
 	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {
 		return nil, constants.ErrNotSlice
 	}

@@ -22,6 +22,10 @@ func drop(array interface{}, num ...int) (interface{}, error) {
 		return array, nil
 	}
 
+	if n < 0 {
+		return nil, constants.ErrParamLessThanZero
+	}
+
 	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {
 		return nil, constants.ErrNotSlice
 	}

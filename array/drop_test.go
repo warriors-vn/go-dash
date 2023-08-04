@@ -97,3 +97,10 @@ func Test_drop_invalid_array_not_support(t *testing.T) {
 	assert.Equal(t, nil, result)
 	assert.Equal(t, constants.ErrNotSupport, err)
 }
+
+func Test_drop_invalid_size_drop_less_than_zero(t *testing.T) {
+	result, err := drop([]int{1, 2, 3}, -2)
+
+	assert.Equal(t, nil, result)
+	assert.Equal(t, constants.ErrParamLessThanZero, err)
+}
