@@ -49,6 +49,20 @@ func Test_concat_valid_string(t *testing.T) {
 	assert.Nil(t, err)
 }
 
+func Test_concat_valid_interface(t *testing.T) {
+	result, err := concat([]interface{}{1, "2", true}, []interface{}{true, false})
+
+	assert.Equal(t, []interface{}{1, "2", true, true, false}, result)
+	assert.Nil(t, err)
+}
+
+func Test_concat_valid_bool(t *testing.T) {
+	result, err := concat([]bool{true}, []bool{false})
+
+	assert.Equal(t, []bool{true, false}, result)
+	assert.Nil(t, err)
+}
+
 func Test_concat_invalid_array_empty(t *testing.T) {
 	result, err := concat([]int{}, []int{1})
 
@@ -75,13 +89,6 @@ func Test_concat_invalid_extend_not_slice(t *testing.T) {
 
 	assert.Equal(t, nil, result)
 	assert.Equal(t, constants.ErrNotSlice, err)
-}
-
-func Test_concat_invalid_array_interface(t *testing.T) {
-	result, err := concat([]interface{}{1}, []bool{true})
-
-	assert.Equal(t, nil, result)
-	assert.Equal(t, constants.ErrNotSupport, err)
 }
 
 func Test_concat_invalid_int_array_extend_incompatible(t *testing.T) {
@@ -124,11 +131,4 @@ func Test_concat_invalid_string_array_extend_incompatible(t *testing.T) {
 
 	assert.Equal(t, nil, result)
 	assert.Equal(t, constants.ErrIncompatible, err)
-}
-
-func Test_concat_invalid_not_support(t *testing.T) {
-	result, err := concat([]bool{true}, []bool{false})
-
-	assert.Equal(t, nil, result)
-	assert.Equal(t, constants.ErrNotSupport, err)
 }
