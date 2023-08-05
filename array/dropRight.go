@@ -12,6 +12,10 @@ import (
 func dropRight(array interface{}, num ...int) (interface{}, error) {
 	arrValue, n := reflect.ValueOf(array), 0
 
+	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {
+		return nil, constants.ErrNotSlice
+	}
+
 	if num != nil {
 		n = num[0]
 	} else {
@@ -26,93 +30,18 @@ func dropRight(array interface{}, num ...int) (interface{}, error) {
 		return nil, constants.ErrParamLessThanZero
 	}
 
-	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {
-		return nil, constants.ErrNotSlice
-	}
-
 	if arrValue.Len() == 0 {
 		return array, nil
 	}
 
-	kind := arrValue.Index(0).Kind()
-	if kind == reflect.Interface {
-		return nil, constants.ErrNotSupport
+	result := reflect.MakeSlice(arrValue.Type(), 0, 0)
+	if n >= arrValue.Len() {
+		return result.Interface(), nil
 	}
 
-	switch kind {
-	case reflect.Int:
-		result := make([]int, 0)
-		if n >= arrValue.Len() {
-			return result, nil
-		}
-
-		for i := 0; i < arrValue.Len()-n; i++ {
-			element := arrValue.Index(i)
-			result = append(result, element.Interface().(int))
-		}
-
-		return result, nil
-	case reflect.Int32:
-		result := make([]int32, 0)
-		if n >= arrValue.Len() {
-			return result, nil
-		}
-
-		for i := 0; i < arrValue.Len()-n; i++ {
-			element := arrValue.Index(i)
-			result = append(result, element.Interface().(int32))
-		}
-
-		return result, nil
-	case reflect.Int64:
-		result := make([]int64, 0)
-		if n >= arrValue.Len() {
-			return result, nil
-		}
-
-		for i := 0; i < arrValue.Len()-n; i++ {
-			element := arrValue.Index(i)
-			result = append(result, element.Interface().(int64))
-		}
-
-		return result, nil
-	case reflect.Float32:
-		result := make([]float32, 0)
-		if n >= arrValue.Len() {
-			return result, nil
-		}
-
-		for i := 0; i < arrValue.Len()-n; i++ {
-			element := arrValue.Index(i)
-			result = append(result, element.Interface().(float32))
-		}
-
-		return result, nil
-	case reflect.Float64:
-		result := make([]float64, 0)
-		if n >= arrValue.Len() {
-			return result, nil
-		}
-
-		for i := 0; i < arrValue.Len()-n; i++ {
-			element := arrValue.Index(i)
-			result = append(result, element.Interface().(float64))
-		}
-
-		return result, nil
-	case reflect.String:
-		result := make([]string, 0)
-		if n >= arrValue.Len() {
-			return result, nil
-		}
-
-		for i := 0; i < arrValue.Len()-n; i++ {
-			element := arrValue.Index(i)
-			result = append(result, element.Interface().(string))
-		}
-
-		return result, nil
+	for i := 0; i < arrValue.Len()-n; i++ {
+		result = reflect.Append(result, arrValue.Index(i))
 	}
 
-	return nil, constants.ErrNotSupport
+	return result.Interface(), nil
 }
