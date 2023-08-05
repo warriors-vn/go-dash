@@ -77,6 +77,13 @@ func Test_drop_valid_empty_array(t *testing.T) {
 	assert.Nil(t, err)
 }
 
+func Test_drop_valid_array_interface(t *testing.T) {
+	result, err := drop([]interface{}{1, "2", true}, 2)
+
+	assert.Equal(t, []interface{}{true}, result)
+	assert.Nil(t, err)
+}
+
 func Test_drop_invalid_array_not_slice(t *testing.T) {
 	result, err := drop(true, 2)
 
@@ -84,18 +91,11 @@ func Test_drop_invalid_array_not_slice(t *testing.T) {
 	assert.Equal(t, constants.ErrNotSlice, err)
 }
 
-func Test_drop_invalid_array_interface(t *testing.T) {
-	result, err := drop([]interface{}{1, 2}, 2)
-
-	assert.Equal(t, nil, result)
-	assert.Equal(t, constants.ErrNotSupport, err)
-}
-
 func Test_drop_invalid_array_not_support(t *testing.T) {
-	result, err := drop([]bool{true, false}, 2)
+	result, err := drop([]bool{true, false, true}, 2)
 
-	assert.Equal(t, nil, result)
-	assert.Equal(t, constants.ErrNotSupport, err)
+	assert.Equal(t, []bool{true}, result)
+	assert.Nil(t, err)
 }
 
 func Test_drop_invalid_size_drop_less_than_zero(t *testing.T) {
