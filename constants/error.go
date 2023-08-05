@@ -13,4 +13,5 @@ var (
 	ErrFieldNotFound     = errors.New("field not found")
 	ErrIncompatible      = errors.New("incompatible field types")
 	ErrParamLessThanZero = errors.New("param is less than zero")
+	ErrNotFunction       = errors.New("input is not a function")
 )
