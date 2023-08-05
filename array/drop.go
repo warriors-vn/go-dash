@@ -32,8 +32,7 @@ func drop(array interface{}, num ...int) (interface{}, error) {
 
 	result := reflect.MakeSlice(arrValue.Type(), 0, 0)
 	for i := n; i < arrValue.Len(); i++ {
-		element := arrValue.Index(i)
-		result = reflect.Append(result, element)
+		result = reflect.Append(result, arrValue.Index(i))
 	}
 
 	return result.Interface(), nil
