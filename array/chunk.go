@@ -25,11 +25,6 @@ func chunk(array interface{}, size int) (interface{}, error) {
 		return nil, constants.ErrEmptyList
 	}
 
-	kind := arrValue.Index(0).Kind()
-	if kind == reflect.Interface {
-		return nil, constants.ErrNotSupport
-	}
-
 	chunkPart := reflect.MakeSlice(arrValue.Type(), 0, 0)
 	result := reflect.MakeSlice(reflect.SliceOf(reflect.TypeOf(array)), 0, 0)
 	for i := 0; i < arrValue.Len(); i++ {
