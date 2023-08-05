@@ -70,6 +70,27 @@ func Test_difference_valid_int_exclude_empty(t *testing.T) {
 	assert.Nil(t, err)
 }
 
+func Test_difference_valid_interface(t *testing.T) {
+	result, err := difference([]interface{}{1, true, "3"}, []interface{}{2, 1, 3})
+
+	assert.Equal(t, []interface{}{true, "3"}, result)
+	assert.Nil(t, err)
+}
+
+func Test_difference_valid_array_exclude_incompatible(t *testing.T) {
+	result, err := difference([]int{2, 3}, []bool{true, true})
+
+	assert.Equal(t, []int{2, 3}, result)
+	assert.Nil(t, err)
+}
+
+func Test_difference_valid_not_support(t *testing.T) {
+	result, err := difference([]uint{2, 3}, []uint{2, 3})
+
+	assert.Equal(t, []uint{}, result)
+	assert.Nil(t, err)
+}
+
 func Test_difference_invalid_array_not_slice(t *testing.T) {
 	result, err := difference(true, []int{2, 3})
 
@@ -82,25 +103,4 @@ func Test_difference_invalid_exclude_not_slice(t *testing.T) {
 
 	assert.Equal(t, nil, result)
 	assert.Equal(t, constants.ErrNotSlice, err)
-}
-
-func Test_difference_invalid_element_array_interface(t *testing.T) {
-	result, err := difference([]interface{}{2, 3}, []int{2, 3})
-
-	assert.Equal(t, nil, result)
-	assert.Equal(t, constants.ErrNotSupport, err)
-}
-
-func Test_difference_invalid_array_exclude_incompatible(t *testing.T) {
-	result, err := difference([]int{2, 3}, []bool{true, true})
-
-	assert.Equal(t, nil, result)
-	assert.Equal(t, constants.ErrIncompatible, err)
-}
-
-func Test_difference_invalid_not_support(t *testing.T) {
-	result, err := difference([]uint{2, 3}, []uint{2, 3})
-
-	assert.Equal(t, nil, result)
-	assert.Equal(t, constants.ErrNotSupport, err)
 }
