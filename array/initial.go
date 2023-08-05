@@ -1,0 +1,30 @@
+package array
+
+import (
+	"reflect"
+
+	"github.com/warriors-vn/go-dash/constants"
+)
+
+// initial returns a new array (slice) containing all elements of the input array except the last one.
+// The function accepts an array (slice) and returns a new array with all elements except the last one.
+// If the input is not a slice or if the array is empty, the function returns an error.
+func initial(array interface{}) (interface{}, error) {
+	arrValue := reflect.ValueOf(array)
+
+	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {
+		return nil, constants.ErrNotSlice
+	}
+
+	if arrValue.Len() == 0 {
+		return array, nil
+	}
+
+	result := reflect.MakeSlice(arrValue.Type(), arrValue.Len()-1, arrValue.Len()-1)
+
+	for i := 0; i < arrValue.Len()-1; i++ {
+		result.Index(i).Set(arrValue.Index(i))
+	}
+
+	return result.Interface(), nil
+}
