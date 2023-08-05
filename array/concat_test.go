@@ -63,6 +63,13 @@ func Test_concat_valid_bool(t *testing.T) {
 	assert.Nil(t, err)
 }
 
+func Test_concat_valid_incompatible(t *testing.T) {
+	result, err := concat([]interface{}{1, "2", true}, []float64{1.1, 2.2})
+
+	assert.Equal(t, []interface{}{1, "2", true, 1.1, 2.2}, result)
+	assert.Nil(t, err)
+}
+
 func Test_concat_invalid_array_empty(t *testing.T) {
 	result, err := concat([]int{}, []int{1})
 

@@ -31,7 +31,7 @@ func concat(array, extend interface{}) (interface{}, error) {
 
 	for i := 0; i < extendValue.Len(); i++ {
 		element := extendValue.Index(i)
-		if kind != element.Kind() {
+		if kind != element.Kind() && kind != reflect.Interface {
 			return nil, constants.ErrIncompatible
 		}
 		result = reflect.Append(result, element)
