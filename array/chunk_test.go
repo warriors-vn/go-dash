@@ -84,13 +84,6 @@ func Test_chunk_invalid_array_interface(t *testing.T) {
 	assert.Equal(t, constants.ErrNotSupport, err)
 }
 
-func Test_chunk_invalid_array_not_support(t *testing.T) {
-	result, err := chunk([]bool{true, false}, 1)
-
-	assert.Equal(t, nil, result)
-	assert.Equal(t, constants.ErrNotSupport, err)
-}
-
 func Test_chunk_invalid_size_less_than_zero(t *testing.T) {
 	result, err := chunk([]int{1, 2, 3}, -1)
 

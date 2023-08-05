@@ -30,98 +30,19 @@ func chunk(array interface{}, size int) (interface{}, error) {
 		return nil, constants.ErrNotSupport
 	}
 
-	switch kind {
-	case reflect.Int:
-		result, chunkPart := make([][]int, 0), make([]int, 0)
-		for i := 0; i < arrValue.Len(); i++ {
-			chunkPart = append(chunkPart, arrValue.Index(i).Interface().(int))
-			if len(chunkPart) == size {
-				result = append(result, chunkPart)
-				chunkPart = make([]int, 0)
-			}
+	chunkPart := reflect.MakeSlice(arrValue.Type(), 0, 0)
+	result := reflect.MakeSlice(reflect.SliceOf(reflect.TypeOf(array)), 0, 0)
+	for i := 0; i < arrValue.Len(); i++ {
+		chunkPart = reflect.Append(chunkPart, arrValue.Index(i))
+		if chunkPart.Len() == size {
+			result = reflect.Append(result, chunkPart)
+			chunkPart = reflect.MakeSlice(arrValue.Type(), 0, 0)
 		}
-
-		if len(chunkPart) > 0 {
-			result = append(result, chunkPart)
-		}
-
-		return result, nil
-	case reflect.Int32:
-		result, chunkPart := make([][]int32, 0), make([]int32, 0)
-		for i := 0; i < arrValue.Len(); i++ {
-			chunkPart = append(chunkPart, arrValue.Index(i).Interface().(int32))
-			if len(chunkPart) == size {
-				result = append(result, chunkPart)
-				chunkPart = make([]int32, 0)
-			}
-		}
-
-		if len(chunkPart) > 0 {
-			result = append(result, chunkPart)
-		}
-
-		return result, nil
-	case reflect.Int64:
-		result, chunkPart := make([][]int64, 0), make([]int64, 0)
-		for i := 0; i < arrValue.Len(); i++ {
-			chunkPart = append(chunkPart, arrValue.Index(i).Interface().(int64))
-			if len(chunkPart) == size {
-				result = append(result, chunkPart)
-				chunkPart = make([]int64, 0)
-			}
-		}
-
-		if len(chunkPart) > 0 {
-			result = append(result, chunkPart)
-		}
-
-		return result, nil
-	case reflect.Float32:
-		result, chunkPart := make([][]float32, 0), make([]float32, 0)
-		for i := 0; i < arrValue.Len(); i++ {
-			chunkPart = append(chunkPart, arrValue.Index(i).Interface().(float32))
-			if len(chunkPart) == size {
-				result = append(result, chunkPart)
-				chunkPart = make([]float32, 0)
-			}
-		}
-
-		if len(chunkPart) > 0 {
-			result = append(result, chunkPart)
-		}
-
-		return result, nil
-	case reflect.Float64:
-		result, chunkPart := make([][]float64, 0), make([]float64, 0)
-		for i := 0; i < arrValue.Len(); i++ {
-			chunkPart = append(chunkPart, arrValue.Index(i).Interface().(float64))
-			if len(chunkPart) == size {
-				result = append(result, chunkPart)
-				chunkPart = make([]float64, 0)
-			}
-		}
-
-		if len(chunkPart) > 0 {
-			result = append(result, chunkPart)
-		}
-
-		return result, nil
-	case reflect.String:
-		result, chunkPart := make([][]string, 0), make([]string, 0)
-		for i := 0; i < arrValue.Len(); i++ {
-			chunkPart = append(chunkPart, arrValue.Index(i).Interface().(string))
-			if len(chunkPart) == size {
-				result = append(result, chunkPart)
-				chunkPart = make([]string, 0)
-			}
-		}
-
-		if len(chunkPart) > 0 {
-			result = append(result, chunkPart)
-		}
-
-		return result, nil
 	}
 
-	return nil, constants.ErrNotSupport
+	if chunkPart.Len() > 0 {
+		result = reflect.Append(result, chunkPart)
+	}
+
+	return result.Interface(), nil
 }
