@@ -70,25 +70,25 @@ func Test_fill_valid_start_great_than_end(t *testing.T) {
 	assert.Nil(t, err)
 }
 
+func Test_fill_valid_array_interface(t *testing.T) {
+	result, err := fill([]interface{}{1, 2, 3}, "*", 1, 2)
+
+	assert.Equal(t, []interface{}{1, "*", 3}, result)
+	assert.Nil(t, err)
+}
+
+func Test_fill_valid_bool(t *testing.T) {
+	result, err := fill([]bool{true, false}, true, 1, 2)
+
+	assert.Equal(t, []bool{true, true}, result)
+	assert.Nil(t, err)
+}
+
 func Test_fill_invalid_array_not_slice(t *testing.T) {
 	result, err := fill(true, 1, 1, 2)
 
 	assert.Equal(t, nil, result)
 	assert.Equal(t, constants.ErrNotSlice, err)
-}
-
-func Test_fill_invalid_array_interface(t *testing.T) {
-	result, err := fill([]interface{}{1, 2, 3}, 1, 1, 2)
-
-	assert.Equal(t, nil, result)
-	assert.Equal(t, constants.ErrNotSupport, err)
-}
-
-func Test_fill_invalid_array_not_found(t *testing.T) {
-	result, err := fill([]bool{true, false}, 1, 1, 2)
-
-	assert.Equal(t, nil, result)
-	assert.Equal(t, constants.ErrNotSupport, err)
 }
 
 func Test_fill_invalid_int_incompatible(t *testing.T) {
