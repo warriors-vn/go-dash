@@ -78,10 +78,10 @@ func Test_chunk_invalid_array_not_slice(t *testing.T) {
 }
 
 func Test_chunk_invalid_array_interface(t *testing.T) {
-	result, err := chunk([]interface{}{1, 2, 3}, 1)
+	result, err := chunk([]interface{}{1, "2", true}, 1)
 
-	assert.Equal(t, nil, result)
-	assert.Equal(t, constants.ErrNotSupport, err)
+	assert.Equal(t, [][]interface{}{{1}, {"2"}, {true}}, result)
+	assert.Nil(t, err)
 }
 
 func Test_chunk_invalid_size_less_than_zero(t *testing.T) {
