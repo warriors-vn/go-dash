@@ -31,7 +31,12 @@ func goDashMap(array, iteratee interface{}) (interface{}, error) {
 		return nil, constants.ErrNotSupport
 	}
 	for i := 0; i < arrValue.Len(); i++ {
-		res := iterateeValue.Call([]reflect.Value{reflect.ValueOf(arrValue.Index(i).Interface())})
+		element := arrValue.Index(i)
+		if element.Kind() != kind {
+			return nil, constants.ErrIncompatible
+		}
+
+		res := iterateeValue.Call([]reflect.Value{reflect.ValueOf(element.Interface())})
 		if len(res) > 0 && res[0].Kind() == kind {
 			result = reflect.Append(result, res[0])
 		}
