@@ -34,7 +34,7 @@ func remove(array interface{}, predicate interface{}) (interface{}, error) {
 		}
 
 		res := predicateValue.Call([]reflect.Value{reflect.ValueOf(element.Interface())})
-		if len(res) > 0 && res[0].Interface().(bool) {
+		if len(res) > 0 && res[0].Kind() == reflect.Bool && res[0].Interface().(bool) {
 			result = reflect.Append(result, element)
 		}
 	}
