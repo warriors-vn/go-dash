@@ -80,3 +80,12 @@ func Test_goDashMap_invalid_interface(t *testing.T) {
 	assert.Equal(t, nil, result)
 	assert.Equal(t, constants.ErrNotSupport, err)
 }
+
+func Test_goDashMap_invalid_incompatible(t *testing.T) {
+	result, err := goDashMap([]string{"a", "b", "c"}, func(n int) int {
+		return n * n
+	})
+
+	assert.Equal(t, nil, result)
+	assert.Equal(t, constants.ErrIncompatible, err)
+}
