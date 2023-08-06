@@ -16,6 +16,15 @@ func Test_remove_valid_int(t *testing.T) {
 	assert.Nil(t, err)
 }
 
+func Test_remove_valid_response_func_not_bool(t *testing.T) {
+	result, err := remove([]int{1, 2, 3, 4}, func(n int) int {
+		return n
+	})
+
+	assert.Equal(t, []int{}, result)
+	assert.Nil(t, err)
+}
+
 func Test_remove_valid_string(t *testing.T) {
 	result, err := remove([]string{"a", "b", "c"}, func(n string) bool {
 		return n > "a"
