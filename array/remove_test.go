@@ -34,6 +34,19 @@ func Test_remove_valid_string_string_two(t *testing.T) {
 	assert.Equal(t, constants.ErrIncompatible, err)
 }
 
+func Test_remove_valid_struct(t *testing.T) {
+	type User struct {
+		Name string
+		Age  int
+	}
+	result, err := remove([]*User{{Name: "Kakalot", Age: 26}, {Name: "Vegeta", Age: 27}, {Name: "Trunk", Age: 10}}, func(n *User) bool {
+		return n.Age%2 == 0
+	})
+
+	assert.Equal(t, []*User{{Name: "Kakalot", Age: 26}, {Name: "Trunk", Age: 10}}, result)
+	assert.Nil(t, err)
+}
+
 func Test_remove_invalid_array_not_slice(t *testing.T) {
 	result, err := remove(true, func(n int) bool {
 		return n%2 == 0
