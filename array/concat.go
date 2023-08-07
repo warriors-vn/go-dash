@@ -6,9 +6,9 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// concat concatenates two arrays into a single array.
+// Concat concatenates two arrays into a single array.
 // The function accepts two arrays of any type (interface{}) and returns a single concatenated array.
-func concat(array, extend interface{}) (interface{}, error) {
+func Concat(array, extend interface{}) (interface{}, error) {
 	arrValue, extendValue := reflect.ValueOf(array), reflect.ValueOf(extend)
 
 	if (arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array) ||

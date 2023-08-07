@@ -2,11 +2,11 @@ package string
 
 import "github.com/warriors-vn/go-dash/constants"
 
-// startsWith checks if the string 'str' starts with the target string 'target' optionally
+// StartsWith checks if the string 'str' starts with the target string 'target' optionally
 // from the specified 'position' in 'str'.
 // It returns true if 'str' starts with 'target', and false otherwise.
 // If 'position' is provided, the comparison starts from that position in 'str'.
-func startsWith(str, target string, position ...int) (bool, error) {
+func StartsWith(str, target string, position ...int) (bool, error) {
 	pos := 1
 	if position != nil {
 		pos = position[0]

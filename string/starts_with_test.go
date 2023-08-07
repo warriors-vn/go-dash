@@ -8,35 +8,35 @@ import (
 )
 
 func Test_startsWith_valid_not_position(t *testing.T) {
-	isStartWith, err := startsWith("abc", "a")
+	isStartWith, err := StartsWith("abc", "a")
 
 	assert.Equal(t, true, isStartWith)
 	assert.Nil(t, err)
 }
 
 func Test_startsWith_valid_position(t *testing.T) {
-	isStartWith, err := startsWith("abcdef", "c", 3)
+	isStartWith, err := StartsWith("abcdef", "c", 3)
 
 	assert.Equal(t, true, isStartWith)
 	assert.Nil(t, err)
 }
 
 func Test_startsWith_invalid_not_position(t *testing.T) {
-	isStartWith, err := startsWith("abc", "b")
+	isStartWith, err := StartsWith("abc", "b")
 
 	assert.Equal(t, false, isStartWith)
 	assert.Nil(t, err)
 }
 
 func Test_startsWith_invalid_position(t *testing.T) {
-	isStartWith, err := startsWith("abcdef", "c", 2)
+	isStartWith, err := StartsWith("abcdef", "c", 2)
 
 	assert.Equal(t, false, isStartWith)
 	assert.Nil(t, err)
 }
 
 func Test_startsWith_out_of_range(t *testing.T) {
-	isStartWith, err := startsWith("abc", "a", 9)
+	isStartWith, err := StartsWith("abc", "a", 9)
 
 	assert.Equal(t, false, isStartWith)
 	assert.Equal(t, constants.ErrOutOfRange, err)

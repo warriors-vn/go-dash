@@ -6,11 +6,11 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// filter returns a new slice containing elements from the input array that satisfy the predicate.
+// Filter returns a new slice containing elements from the input array that satisfy the predicate.
 // It takes an array-like data structure and a predicate function that determines whether an element should be included.
 // The predicate function should have the signature func(elementType) bool.
 // The function returns the new filtered slice and an error if any occurs.
-func filter(array interface{}, predicate interface{}) (interface{}, error) {
+func Filter(array interface{}, predicate interface{}) (interface{}, error) {
 	arrValue, predicateValue := reflect.ValueOf(array), reflect.ValueOf(predicate)
 
 	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {

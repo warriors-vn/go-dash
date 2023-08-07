@@ -6,10 +6,10 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// lt checks if the first value is less than the second value.
+// Lt checks if the first value is less than the second value.
 // The function accepts two values of any comparable type (int, float, string, etc.) and returns true if the first value is less than the second value, false otherwise.
 // If the values are not comparable, the function returns false.
-func lt(value, other interface{}) (bool, error) {
+func Lt(value, other interface{}) (bool, error) {
 	valueOf, otherOfValue := reflect.ValueOf(value), reflect.ValueOf(other)
 
 	if valueOf.Kind() != otherOfValue.Kind() {

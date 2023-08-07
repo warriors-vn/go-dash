@@ -6,11 +6,11 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// slice extracts a sub-slice from the input array, starting from the 'start' index (inclusive)
+// Slice extracts a sub-Slice from the input array, starting from the 'start' index (inclusive)
 // up to the 'end' index (exclusive).
 // It takes an array-like data structure, the start index, and the end index as arguments.
-// The function returns the sub-slice and an error if any occurs.
-func slice(array interface{}, start, end int) (interface{}, error) {
+// The function returns the sub-Slice and an error if any occurs.
+func Slice(array interface{}, start, end int) (interface{}, error) {
 	arrValue := reflect.ValueOf(array)
 
 	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {

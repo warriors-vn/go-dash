@@ -6,11 +6,11 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// chunk divides a given array into smaller chunks of the specified size.
-// The function accepts an array of any type (interface{}) and a size for each chunk.
-// It returns a slice of slices, where each inner slice contains elements from the original array.
-// The last chunk may contain fewer elements if the length of the array is not divisible by the chunk size.
-func chunk(array interface{}, size int) (interface{}, error) {
+// Chunk divides a given array into smaller chunks of the specified size.
+// The function accepts an array of any type (interface{}) and a size for each Chunk.
+// It returns a Slice of slices, where each inner Slice contains elements from the original array.
+// The Last Chunk may contain fewer elements if the length of the array is not divisible by the Chunk size.
+func Chunk(array interface{}, size int) (interface{}, error) {
 	arrValue := reflect.ValueOf(array)
 
 	if size < 0 {

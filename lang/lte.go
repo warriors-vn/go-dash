@@ -6,10 +6,10 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// lte checks if the first value is less than or equal to the second value.
+// Lte checks if the first value is less than or equal to the second value.
 // The function accepts two values of any comparable type (int, float, string, etc.) and returns true if the first value is less than or equal to the second value, false otherwise.
 // If the values are not comparable, the function returns an error.
-func lte(value, other interface{}) (bool, error) {
+func Lte(value, other interface{}) (bool, error) {
 	valueOf, otherOfValue := reflect.ValueOf(value), reflect.ValueOf(other)
 
 	if valueOf.Kind() != otherOfValue.Kind() {

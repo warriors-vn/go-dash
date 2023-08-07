@@ -6,11 +6,11 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// find returns the first element from the input array that satisfies the predicate.
+// Find returns the first element from the input array that satisfies the predicate.
 // It takes an array-like data structure and a predicate function that determines whether an element is a match.
 // The predicate function should have the signature func(elementType) bool.
 // The function returns the found element and a boolean indicating whether a match was found, or an error if any occurs.
-func find(array interface{}, predicate interface{}) (interface{}, error) {
+func Find(array interface{}, predicate interface{}) (interface{}, error) {
 	arrValue, predicateValue := reflect.ValueOf(array), reflect.ValueOf(predicate)
 
 	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {

@@ -2,9 +2,9 @@ package go_math
 
 import "reflect"
 
-// subtract performs subtraction on two values of various numeric types.
+// Subtract performs subtraction on two values of various numeric types.
 // It returns the result as an interface{} to handle different numeric types.
-func subtract(minuend, subtrahend interface{}) interface{} {
+func Subtract(minuend, subtrahend interface{}) interface{} {
 	typeOfMinuend, typeOfSubtrahend := reflect.TypeOf(minuend), reflect.TypeOf(subtrahend)
 
 	kind := typeOfMinuend.Kind()

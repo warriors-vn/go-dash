@@ -6,13 +6,13 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// partition separates the elements of the input array into two slices based on the predicate function.
-// It takes an array-like data structure and a predicate function that determines the partition.
+// Partition separates the elements of the input array into two slices based on the predicate function.
+// It takes an array-like data structure and a predicate function that determines the Partition.
 // The predicate function should have the signature func(elementType) bool.
 // The function returns two new slices: one containing elements that satisfy the predicate,
 // and the other containing elements that do not satisfy the predicate.
 // An error is returned if any occurs.
-func partition(array, predicate interface{}) (interface{}, error) {
+func Partition(array, predicate interface{}) (interface{}, error) {
 	arrValue, predicateValue := reflect.ValueOf(array), reflect.ValueOf(predicate)
 
 	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {

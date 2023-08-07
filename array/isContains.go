@@ -6,10 +6,10 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// isContainsArray checks if a given element is present in the array.
-// The function accepts an array (slice) and an element of any type (interface{}) and returns true if the element is found in the array, false otherwise.
+// IsContainsArray checks if a given element is present in the array.
+// The function accepts an array (Slice) and an element of any type (interface{}) and returns true if the element is found in the array, false otherwise.
 // If the array or element is of an unsupported type, the function returns an error.
-func isContainsArray(array, element interface{}) (bool, error) {
+func IsContainsArray(array, element interface{}) (bool, error) {
 	arrValue := reflect.ValueOf(array)
 
 	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {

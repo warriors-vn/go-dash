@@ -1,10 +1,10 @@
 package string
 
-// pad a string 's' with a specified 'length' by adding 'chars' on both sides.
+// Pad a string 's' with a specified 'length' by adding 'chars' on both sides.
 // If 'char' is not provided, it defaults to a space character.
 // The resulting padded string will have a total length of at least 'length'.
 // If the original string length is greater than or equal to 'length', the original string is returned unchanged.
-func pad(s string, length int, char ...string) string {
+func Pad(s string, length int, char ...string) string {
 	if len(s) >= length || (char != nil && char[0] == "") {
 		return s
 	}

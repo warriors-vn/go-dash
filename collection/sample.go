@@ -8,9 +8,9 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// sample randomly selects and returns a single element from the input array.
+// Sample randomly selects and returns a single element from the input array.
 // It takes an array-like data structure and returns a randomly chosen element, or an error if any occurs.
-func sample(array interface{}) (interface{}, error) {
+func Sample(array interface{}) (interface{}, error) {
 	arrValue := reflect.ValueOf(array)
 
 	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {

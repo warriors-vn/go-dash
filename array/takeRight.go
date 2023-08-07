@@ -6,11 +6,11 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// takeRight returns a new slice containing the last 'number' elements from the input array.
-// It takes an array-like data structure and an optional number of elements to take.
+// TakeRight returns a new Slice containing the Last 'number' elements from the input array.
+// It takes an array-like data structure and an optional number of elements to Take.
 // If 'number' is not provided or is greater than the length of the array, all elements are taken.
-// The function returns the new slice and an error if any occurs.
-func takeRight(array interface{}, number ...int) (interface{}, error) {
+// The function returns the new Slice and an error if any occurs.
+func TakeRight(array interface{}, number ...int) (interface{}, error) {
 	arrValue := reflect.ValueOf(array)
 
 	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {

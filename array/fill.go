@@ -6,11 +6,11 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// fill elements of an array (slice) with a specified value within the specified range.
-// The function accepts an array (slice), a value to fill with, and optional start and end indices.
+// Fill elements of an array (Slice) with a specified value within the specified range.
+// The function accepts an array (Slice), a value to Fill with, and optional start and end indices.
 // It returns the modified array with filled values.
-// If the input is not a slice or if the start or end indices are out of bounds, the function returns an error.
-func fill(array, input interface{}, start, end int) (interface{}, error) {
+// If the input is not a Slice or if the start or end indices are out of bounds, the function returns an error.
+func Fill(array, input interface{}, start, end int) (interface{}, error) {
 	arrValue, inputValue := reflect.ValueOf(array), reflect.ValueOf(input)
 
 	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {

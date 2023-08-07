@@ -5,9 +5,9 @@ import (
 	"reflect"
 )
 
-// toString converts a value to its string representation.
+// ToString converts a value to its string representation.
 // The function accepts a value of any type (interface{}) and returns its string representation.
-func toString(value interface{}) string {
+func ToString(value interface{}) string {
 	valueOf := reflect.ValueOf(value)
 
 	switch valueOf.Kind() {

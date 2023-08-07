@@ -6,11 +6,11 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// sortedUniq returns a new slice with only unique elements from the sorted input slice.
-// It takes an array-like data structure as input, assumes that the input slice is sorted,
-// and returns a new slice containing only unique elements.
-// The function returns the new slice and an error if any occurs.
-func sortedUniq(array interface{}) (interface{}, error) {
+// SortedUniq returns a new Slice with only unique elements from the sorted input Slice.
+// It takes an array-like data structure as input, assumes that the input Slice is sorted,
+// and returns a new Slice containing only unique elements.
+// The function returns the new Slice and an error if any occurs.
+func SortedUniq(array interface{}) (interface{}, error) {
 	arrValue := reflect.ValueOf(array)
 
 	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {

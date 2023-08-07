@@ -6,8 +6,8 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// pullAll removes all occurrences of specified elements from the array (slice).
-func pullAll(array, removes interface{}) (interface{}, error) {
+// PullAll removes all occurrences of specified elements from the array (Slice).
+func PullAll(array, removes interface{}) (interface{}, error) {
 	arrValue, removesValue := reflect.ValueOf(array), reflect.ValueOf(removes)
 
 	if (arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array) ||

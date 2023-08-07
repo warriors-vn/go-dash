@@ -6,11 +6,11 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// xor returns a new slice that contains the elements that appear in an odd number of input arrays.
-// It takes variadic arguments representing array-like data structures and returns a new slice
+// Xor returns a new Slice that contains the elements that appear in an odd number of input arrays.
+// It takes variadic arguments representing array-like data structures and returns a new Slice
 // containing elements that are present in an odd number of input arrays.
-// The function returns the new slice and an error if any occurs.
-func xor(arrays ...interface{}) (interface{}, error) {
+// The function returns the new Slice and an error if any occurs.
+func Xor(arrays ...interface{}) (interface{}, error) {
 	if arrays == nil {
 		return nil, constants.ErrNotSupport
 	}

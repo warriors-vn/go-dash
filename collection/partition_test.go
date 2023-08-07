@@ -8,7 +8,7 @@ import (
 )
 
 func Test_partition_valid_int(t *testing.T) {
-	result, err := partition([]int{1, 2, 3, 4}, func(n int) bool {
+	result, err := Partition([]int{1, 2, 3, 4}, func(n int) bool {
 		return n%2 == 0
 	})
 
@@ -17,7 +17,7 @@ func Test_partition_valid_int(t *testing.T) {
 }
 
 func Test_partition_valid_response_func_invalid(t *testing.T) {
-	result, err := partition([]int{1, 2, 3, 4}, func(n int) int {
+	result, err := Partition([]int{1, 2, 3, 4}, func(n int) int {
 		return n
 	})
 
@@ -26,7 +26,7 @@ func Test_partition_valid_response_func_invalid(t *testing.T) {
 }
 
 func Test_partition_valid_string(t *testing.T) {
-	result, err := partition([]string{"a", "b", "c"}, func(n string) bool {
+	result, err := Partition([]string{"a", "b", "c"}, func(n string) bool {
 		return n > "a"
 	})
 
@@ -39,7 +39,7 @@ func Test_partition_valid_struct(t *testing.T) {
 		Name string
 		Age  int
 	}
-	result, err := partition([]*User{{Name: "Kakalot", Age: 26}, {Name: "Vegeta", Age: 27}, {Name: "Trunk", Age: 10}}, func(n *User) bool {
+	result, err := Partition([]*User{{Name: "Kakalot", Age: 26}, {Name: "Vegeta", Age: 27}, {Name: "Trunk", Age: 10}}, func(n *User) bool {
 		return n.Age%2 == 0
 	})
 
@@ -48,7 +48,7 @@ func Test_partition_valid_struct(t *testing.T) {
 }
 
 func Test_partition_invalid_array_not_slice(t *testing.T) {
-	result, err := partition(true, func(n int) int {
+	result, err := Partition(true, func(n int) int {
 		return n * 2
 	})
 
@@ -57,14 +57,14 @@ func Test_partition_invalid_array_not_slice(t *testing.T) {
 }
 
 func Test_partition_invalid_predicate_not_func(t *testing.T) {
-	result, err := partition([]string{"a", "b", "c"}, true)
+	result, err := Partition([]string{"a", "b", "c"}, true)
 
 	assert.Equal(t, nil, result)
 	assert.Equal(t, constants.ErrNotFunction, err)
 }
 
 func Test_partition_invalid_param_predicate_limit(t *testing.T) {
-	result, err := partition([]string{"a", "b", "c"}, func(n string, m int) bool {
+	result, err := Partition([]string{"a", "b", "c"}, func(n string, m int) bool {
 		return n == "a" || m%2 == 0
 	})
 
@@ -73,7 +73,7 @@ func Test_partition_invalid_param_predicate_limit(t *testing.T) {
 }
 
 func Test_partition_invalid_interface(t *testing.T) {
-	result, err := partition([]interface{}{"a", "b", "c"}, func(n interface{}) interface{} {
+	result, err := Partition([]interface{}{"a", "b", "c"}, func(n interface{}) interface{} {
 		return n
 	})
 
@@ -82,7 +82,7 @@ func Test_partition_invalid_interface(t *testing.T) {
 }
 
 func Test_partition_invalid_incompatible(t *testing.T) {
-	result, err := partition([]string{"a", "b", "c"}, func(n int) int {
+	result, err := Partition([]string{"a", "b", "c"}, func(n int) int {
 		return n * n
 	})
 

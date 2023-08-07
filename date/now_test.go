@@ -6,6 +6,6 @@ import (
 )
 
 func Test_now(t *testing.T) {
-	result := now()
+	result := Now()
 	fmt.Println(result)
 }

@@ -6,11 +6,11 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// goDashMap applies the iteratee function to each element in the input array and returns a new slice of results.
+// GoDashMap applies the iteratee function to each element in the input array and returns a new slice of results.
 // It takes an array-like data structure and an iteratee function that operates on each element.
 // The iteratee function should have the signature func(elementType) mappedElementType.
 // The function returns a new slice of mapped elements and an error if any occurs.
-func goDashMap(array, iteratee interface{}) (interface{}, error) {
+func GoDashMap(array, iteratee interface{}) (interface{}, error) {
 	arrValue, iterateeValue := reflect.ValueOf(array), reflect.ValueOf(iteratee)
 
 	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {

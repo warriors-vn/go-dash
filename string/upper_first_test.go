@@ -11,16 +11,16 @@ func Test_upperFirst(t *testing.T) {
 }
 
 func Test_upperFirst_valid_one(t *testing.T) {
-	result := upperFirst("fred")
+	result := UpperFirst("fred")
 	assert.Equal(t, "Fred", result)
 }
 
 func Test_upperFirst_valid_two(t *testing.T) {
-	result := upperFirst("FRED")
+	result := UpperFirst("FRED")
 	assert.Equal(t, "FRED", result)
 }
 
 func Test_upperFirst_invalid(t *testing.T) {
-	result := upperFirst("")
+	result := UpperFirst("")
 	assert.Equal(t, "", result)
 }

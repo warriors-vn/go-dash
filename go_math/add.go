@@ -4,10 +4,10 @@ import (
 	"reflect"
 )
 
-// add performs a mathematical operation on the provided 'augend' and 'addend'.
+// Add performs a mathematical operation on the provided 'augend' and 'addend'.
 // The function supports addition of integer and floating-point values.
 // It returns the result of the mathematical operation as an interface{} value.
-func add(augend, addend interface{}) interface{} {
+func Add(augend, addend interface{}) interface{} {
 	typeOfAugend, typeOfAddend := reflect.TypeOf(augend), reflect.TypeOf(addend)
 
 	kind := typeOfAugend.Kind()

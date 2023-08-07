@@ -6,10 +6,10 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// without returns a new slice that excludes specified values from the input array.
+// Without returns a new Slice that excludes specified values from the input array.
 // It takes an array-like data structure and a variable number of values to be excluded.
-// The function returns the new slice without the specified values and an error if any occurs.
-func without(array interface{}, values ...interface{}) (interface{}, error) {
+// The function returns the new Slice Without the specified values and an error if any occurs.
+func Without(array interface{}, values ...interface{}) (interface{}, error) {
 	arrValue := reflect.ValueOf(array)
 
 	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {

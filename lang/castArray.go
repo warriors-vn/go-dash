@@ -6,10 +6,10 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// castArray converts a value to an array if it is not already an array.
+// CastArray converts a value to an array if it is not already an array.
 // The function accepts a value of any type (interface{}) and returns an array containing the value.
 // If the value is already an array, it is returned as-is.
-func castArray(value interface{}) (interface{}, error) {
+func CastArray(value interface{}) (interface{}, error) {
 	switch reflect.ValueOf(value).Kind() {
 	case reflect.Int:
 		return []int{value.(int)}, nil
