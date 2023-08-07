@@ -6,10 +6,10 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// dropRight returns a new array with `num` elements dropped from the end.
-// The function accepts an array of any type (interface{}) and an optional number `num` of elements to drop.
+// DropRight returns a new array with `num` elements dropped from the end.
+// The function accepts an array of any type (interface{}) and an optional number `num` of elements to Drop.
 // It returns a new array with the specified number of elements removed from the end.
-func dropRight(array interface{}, num ...int) (interface{}, error) {
+func DropRight(array interface{}, num ...int) (interface{}, error) {
 	arrValue, n := reflect.ValueOf(array), 0
 
 	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {

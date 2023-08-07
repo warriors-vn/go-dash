@@ -6,10 +6,10 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// reverse reverses the elements in the input array.
+// Reverse reverses the elements in the input array.
 // It takes an array-like data structure and returns the modified array with reversed elements.
 // The function returns the modified array and an error if any occurs.
-func reverse(array interface{}) (interface{}, error) {
+func Reverse(array interface{}) (interface{}, error) {
 	arrValue := reflect.ValueOf(array)
 
 	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {

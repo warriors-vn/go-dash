@@ -8,10 +8,10 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// sampleSize randomly selects and returns a specified number of elements from the input array.
-// It takes an array-like data structure and the number of elements to sample.
+// SampleSize randomly selects and returns a specified number of elements from the input array.
+// It takes an array-like data structure and the number of elements to Sample.
 // The function returns a slice of randomly chosen elements, or an error if any occurs.
-func sampleSize(array interface{}, number int) (interface{}, error) {
+func SampleSize(array interface{}, number int) (interface{}, error) {
 	arrValue := reflect.ValueOf(array)
 
 	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {

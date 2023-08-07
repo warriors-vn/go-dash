@@ -6,10 +6,10 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// multiply calculates the product of the multiplier and subtrahend.
+// Multiply calculates the product of the multiplier and subtrahend.
 // The function accepts two arguments, multiplier and subtrahend, both of type interface{}.
 // It returns the result of the multiplication as an interface{} and an error if any issue occurs.
-func multiply(multiplier, subtrahend interface{}) (interface{}, error) {
+func Multiply(multiplier, subtrahend interface{}) (interface{}, error) {
 	typeOfMultiplier, typeOfSubtrahend := reflect.TypeOf(multiplier), reflect.TypeOf(subtrahend)
 
 	kind := typeOfMultiplier.Kind()

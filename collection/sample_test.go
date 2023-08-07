@@ -8,7 +8,7 @@ import (
 )
 
 func Test_sample_valid_int(t *testing.T) {
-	result, err := sample([]int{1, 2, 3})
+	result, err := Sample([]int{1, 2, 3})
 
 	assert.Nil(t, err)
 	if result == 1 || result == 2 || result == 3 {
@@ -17,7 +17,7 @@ func Test_sample_valid_int(t *testing.T) {
 }
 
 func Test_sample_valid_string(t *testing.T) {
-	result, err := sample([]string{"1", "2", "3"})
+	result, err := Sample([]string{"1", "2", "3"})
 
 	assert.Nil(t, err)
 	if result == "1" || result == "2" || result == "3" {
@@ -26,7 +26,7 @@ func Test_sample_valid_string(t *testing.T) {
 }
 
 func Test_sample_invalid_array_not_slice(t *testing.T) {
-	result, err := sample(true)
+	result, err := Sample(true)
 
 	assert.Equal(t, nil, result)
 	assert.Equal(t, constants.ErrNotSlice, err)

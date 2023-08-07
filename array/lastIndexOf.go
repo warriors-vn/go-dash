@@ -6,10 +6,10 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// lastIndexOf searches for the last occurrence of the given inputSearch value
-// within the array (slice) and returns its index. The search starts from the end
+// LastIndexOf searches for the Last occurrence of the given inputSearch value
+// within the array (Slice) and returns its index. The search starts from the end
 // of the array or from the specified fromIndex if provided.
-func lastIndexOf(array, inputSearch interface{}, fromIndex ...int) (int, error) {
+func LastIndexOf(array, inputSearch interface{}, fromIndex ...int) (int, error) {
 	arrValue := reflect.ValueOf(array)
 
 	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {

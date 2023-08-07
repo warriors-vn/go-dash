@@ -6,11 +6,11 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// findLast returns the last element from the input array that satisfies the predicate.
+// FindLast returns the last element from the input array that satisfies the predicate.
 // It takes an array-like data structure and a predicate function that determines whether an element is a match.
 // The predicate function should have the signature func(elementType) bool.
 // The function returns the found element and a boolean indicating whether a match was found, or an error if any occurs.
-func findLast(array interface{}, predicate interface{}) (interface{}, error) {
+func FindLast(array interface{}, predicate interface{}) (interface{}, error) {
 	arrValue, predicateValue := reflect.ValueOf(array), reflect.ValueOf(predicate)
 
 	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {

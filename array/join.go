@@ -7,9 +7,9 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// join takes an array (slice) of elements and a separator string,
+// Join takes an array (Slice) of elements and a separator string,
 // and returns a single string by joining the elements with the separator.
-func join(array interface{}, separator string) (string, error) {
+func Join(array interface{}, separator string) (string, error) {
 	arrValue, result := reflect.ValueOf(array), ""
 
 	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {

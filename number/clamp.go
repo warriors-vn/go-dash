@@ -7,10 +7,10 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// clamp a given number to be within the specified range [lower, upper].
+// Clamp a given number to be within the specified range [lower, upper].
 // The function accepts three arguments: number, lower bound (lower), and upper bound (upper),
 // all of type interface{}. It returns the clamped value within the specified range and an error if any issue occurs.
-func clamp(number, lower, upper interface{}) (interface{}, error) {
+func Clamp(number, lower, upper interface{}) (interface{}, error) {
 	typeOfNumber, typeOfLower, typeOfUpper := reflect.TypeOf(number), reflect.TypeOf(lower), reflect.TypeOf(upper)
 
 	if !(typeOfNumber.Kind() == typeOfLower.Kind() && typeOfNumber.Kind() == typeOfUpper.Kind()) {

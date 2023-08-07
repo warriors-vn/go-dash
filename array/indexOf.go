@@ -2,11 +2,11 @@ package array
 
 import "reflect"
 
-// indexOf finds the index of the first occurrence of a value in an array (slice).
-// The function accepts an array (slice), a value to search for, and an optional fromIndex.
+// IndexOf finds the index of the first occurrence of a value in an array (Slice).
+// The function accepts an array (Slice), a value to search for, and an optional fromIndex.
 // It returns the index of the first occurrence of the value in the array.
 // If the value is not found, the function returns -1.
-func indexOf(array, input interface{}, fromIndex ...int) interface{} {
+func IndexOf(array, input interface{}, fromIndex ...int) interface{} {
 	arrValue, inputValue := reflect.ValueOf(array), reflect.ValueOf(input)
 
 	if (arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array) || arrValue.Len() == 0 {

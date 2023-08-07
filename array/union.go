@@ -6,11 +6,11 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// union returns a new slice that contains the unique elements from multiple input arrays.
-// It takes variadic arguments representing array-like data structures and returns a new slice
+// Union returns a new Slice that contains the unique elements from multiple input arrays.
+// It takes variadic arguments representing array-like data structures and returns a new Slice
 // containing unique elements from all input arrays combined.
-// The function returns the new slice and an error if any occurs.
-func union(arrays ...interface{}) (interface{}, error) {
+// The function returns the new Slice and an error if any occurs.
+func Union(arrays ...interface{}) (interface{}, error) {
 	if arrays == nil {
 		return nil, constants.ErrNotSupport
 	}

@@ -6,11 +6,11 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// remove elements from the input array based on a given predicate function.
+// Remove elements from the input array based on a given predicate function.
 // It takes an array-like data structure and a predicate function that determines
 // whether an element should be removed.
 // The function returns the modified array and an error if any occurs.
-func remove(array interface{}, predicate interface{}) (interface{}, interface{}, error) {
+func Remove(array interface{}, predicate interface{}) (interface{}, interface{}, error) {
 	arrValue, predicateValue := reflect.ValueOf(array), reflect.ValueOf(predicate)
 
 	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {

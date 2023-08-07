@@ -6,8 +6,8 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// minInt finds and returns the minimum value from the given slice of integers 'i'.
-func minInt(i []int) int {
+// MinInt finds and returns the minimum value from the given slice of integers 'i'.
+func MinInt(i []int) int {
 	if len(i) == 0 {
 		return 0
 	}
@@ -22,25 +22,8 @@ func minInt(i []int) int {
 	return min
 }
 
-// minInt32 finds and returns the minimum value from the given slice of int32 values 'i'.
-func minInt32(i []int32) int32 {
-	if len(i) == 0 {
-		return 0
-	}
-
-	min := i[0]
-
-	for _, value := range i {
-		if value < min {
-			min = value
-		}
-	}
-
-	return min
-}
-
-// minInt64 finds and returns the minimum value from the given slice of int64 values 'i'.
-func minInt64(i []int64) int64 {
+// MinInt32 finds and returns the minimum value from the given slice of int32 values 'i'.
+func MinInt32(i []int32) int32 {
 	if len(i) == 0 {
 		return 0
 	}
@@ -56,8 +39,8 @@ func minInt64(i []int64) int64 {
 	return min
 }
 
-// minFloat32 finds and returns the minimum value from the given slice of float32 values 'i'.
-func minFloat32(i []float32) float32 {
+// MinInt64 finds and returns the minimum value from the given slice of int64 values 'i'.
+func MinInt64(i []int64) int64 {
 	if len(i) == 0 {
 		return 0
 	}
@@ -73,8 +56,8 @@ func minFloat32(i []float32) float32 {
 	return min
 }
 
-// minFloat64 finds and returns the minimum value from the given slice of float64 values 'i'.
-func minFloat64(i []float64) float64 {
+// MinFloat32 finds and returns the minimum value from the given slice of float32 values 'i'.
+func MinFloat32(i []float32) float32 {
 	if len(i) == 0 {
 		return 0
 	}
@@ -90,10 +73,27 @@ func minFloat64(i []float64) float64 {
 	return min
 }
 
-// minField finds and returns the minimum value of a specified field in a list of structs.
+// MinFloat64 finds and returns the minimum value from the given slice of float64 values 'i'.
+func MinFloat64(i []float64) float64 {
+	if len(i) == 0 {
+		return 0
+	}
+
+	min := i[0]
+
+	for _, value := range i {
+		if value < min {
+			min = value
+		}
+	}
+
+	return min
+}
+
+// MinField finds and returns the minimum value of a specified field in a list of structs.
 // The 'list' parameter is the slice of structs, and 'fieldName' specifies the field to compare.
 // The function returns the minimum field value as an interface{} and an error if any issue occurs.
-func minField(list interface{}, fieldName string) (interface{}, error) {
+func MinField(list interface{}, fieldName string) (interface{}, error) {
 	value := reflect.ValueOf(list)
 	if value.Kind() != reflect.Slice {
 		return nil, constants.ErrNotSlice

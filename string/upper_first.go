@@ -2,8 +2,8 @@ package string
 
 import "strings"
 
-// upperFirst converts the first letter of a string to uppercase while leaving the rest unchanged.
-func upperFirst(s string) string {
+// UpperFirst converts the first letter of a string to uppercase while leaving the rest unchanged.
+func UpperFirst(s string) string {
 	if len(s) == 0 {
 		return s
 	}

@@ -6,11 +6,11 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// reject returns a new slice containing elements from the input array that do not satisfy the predicate.
+// Reject returns a new slice containing elements from the input array that do not satisfy the predicate.
 // It takes an array-like data structure and a predicate function that determines whether an element should be excluded.
 // The predicate function should have the signature func(elementType) bool.
 // The function returns the new slice without the excluded elements and an error if any occurs.
-func reject(array interface{}, predicate interface{}) (interface{}, error) {
+func Reject(array interface{}, predicate interface{}) (interface{}, error) {
 	arrValue, predicateValue := reflect.ValueOf(array), reflect.ValueOf(predicate)
 
 	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {

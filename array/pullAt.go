@@ -6,10 +6,10 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// pullAt removes elements from the input array at specified indexes and returns the modified array.
-// It takes an array-like data structure and a list of indexes to remove.
+// PullAt removes elements from the input array at specified indexes and returns the modified array.
+// It takes an array-like data structure and a list of indexes to Remove.
 // The function returns the modified array and an error if any occurs.
-func pullAt(array interface{}, indexes []int) (interface{}, error) {
+func PullAt(array interface{}, indexes []int) (interface{}, error) {
 	arrValue := reflect.ValueOf(array)
 
 	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {

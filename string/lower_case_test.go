@@ -7,28 +7,28 @@ import (
 )
 
 func Test_lowerCase_valid_one(t *testing.T) {
-	result, err := lowerCase("Foo Bar")
+	result, err := LowerCase("Foo Bar")
 
 	assert.Equal(t, "foo bar", result)
 	assert.Nil(t, err)
 }
 
 func Test_lowerCase_valid_two(t *testing.T) {
-	result, err := lowerCase("__FOO_BAR__")
+	result, err := LowerCase("__FOO_BAR__")
 
 	assert.Equal(t, "foo bar", result)
 	assert.Nil(t, err)
 }
 
 func Test_lowerCase_valid_three(t *testing.T) {
-	result, err := lowerCase("fooBar")
+	result, err := LowerCase("fooBar")
 
 	assert.Equal(t, "foobar", result)
 	assert.Nil(t, err)
 }
 
 func Test_lowerCase_valid_four(t *testing.T) {
-	result, err := lowerCase(")*)_%&^sa_FOO_BAR__")
+	result, err := LowerCase(")*)_%&^sa_FOO_BAR__")
 
 	assert.Equal(t, "sa foo bar", result)
 	assert.Nil(t, err)

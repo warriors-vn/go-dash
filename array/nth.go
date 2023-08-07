@@ -6,9 +6,9 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// nth returns the element at the specified index from the array (slice).
+// Nth returns the element at the specified index from the array (Slice).
 // The index is 1-based, so the first element is at index 1.
-func nth(array interface{}, number int) (interface{}, error) {
+func Nth(array interface{}, number int) (interface{}, error) {
 	arrValue := reflect.ValueOf(array)
 
 	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {

@@ -7,7 +7,7 @@ import (
 )
 
 // MaxInt finds and returns the maximum value from the given slice of integers 'i'.
-func maxInt(i []int) int {
+func MaxInt(i []int) int {
 	if len(i) == 0 {
 		return 0
 	}
@@ -22,25 +22,8 @@ func maxInt(i []int) int {
 	return max
 }
 
-// maxInt32 finds and returns the maximum value from the given slice of int32 values 'i'.
-func maxInt32(i []int32) int32 {
-	if len(i) == 0 {
-		return 0
-	}
-
-	max := i[0]
-
-	for _, value := range i {
-		if value > max {
-			max = value
-		}
-	}
-
-	return max
-}
-
-// maxInt64 finds and returns the maximum value from the given slice of int64 values 'i'.
-func maxInt64(i []int64) int64 {
+// MaxInt32 finds and returns the maximum value from the given slice of int32 values 'i'.
+func MaxInt32(i []int32) int32 {
 	if len(i) == 0 {
 		return 0
 	}
@@ -56,8 +39,8 @@ func maxInt64(i []int64) int64 {
 	return max
 }
 
-// maxFloat32 finds and returns the maximum value from the given slice of float32 values 'i'.
-func maxFloat32(i []float32) float32 {
+// MaxInt64 finds and returns the maximum value from the given slice of int64 values 'i'.
+func MaxInt64(i []int64) int64 {
 	if len(i) == 0 {
 		return 0
 	}
@@ -73,8 +56,8 @@ func maxFloat32(i []float32) float32 {
 	return max
 }
 
-// maxFloat64 finds and returns the maximum value from the given slice of float64 values 'i'.
-func maxFloat64(i []float64) float64 {
+// MaxFloat32 finds and returns the maximum value from the given slice of float32 values 'i'.
+func MaxFloat32(i []float32) float32 {
 	if len(i) == 0 {
 		return 0
 	}
@@ -90,10 +73,27 @@ func maxFloat64(i []float64) float64 {
 	return max
 }
 
-// maxField finds and returns the maximum value of a specified field in a list of structs.
+// MaxFloat64 finds and returns the maximum value from the given slice of float64 values 'i'.
+func MaxFloat64(i []float64) float64 {
+	if len(i) == 0 {
+		return 0
+	}
+
+	max := i[0]
+
+	for _, value := range i {
+		if value > max {
+			max = value
+		}
+	}
+
+	return max
+}
+
+// MaxField finds and returns the maximum value of a specified field in a list of structs.
 // The 'list' parameter is the slice of structs, and 'fieldName' specifies the field to compare.
 // The function returns the maximum field value as an interface{} and an error if any issue occurs.
-func maxField(list interface{}, fieldName string) (interface{}, error) {
+func MaxField(list interface{}, fieldName string) (interface{}, error) {
 	value := reflect.ValueOf(list)
 	if value.Kind() != reflect.Slice {
 		return nil, constants.ErrNotSlice

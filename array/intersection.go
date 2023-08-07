@@ -6,10 +6,10 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// intersection returns a new array (slice) containing unique elements that are present in both input arrays.
-// The function accepts two arrays (slices) and returns a new array with the intersection of unique elements.
-// If either of the inputs is not a slice, the function returns an error.
-func intersection(array, other interface{}) (interface{}, error) {
+// Intersection returns a new array (Slice) containing unique elements that are present in both input arrays.
+// The function accepts two arrays (slices) and returns a new array with the Intersection of unique elements.
+// If either of the inputs is not a Slice, the function returns an error.
+func Intersection(array, other interface{}) (interface{}, error) {
 	arrValue, otherValue := reflect.ValueOf(array), reflect.ValueOf(other)
 
 	if (arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array) || (otherValue.Kind() != reflect.Slice && otherValue.Kind() != reflect.Array) {

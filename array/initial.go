@@ -6,10 +6,10 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// initial returns a new array (slice) containing all elements of the input array except the last one.
-// The function accepts an array (slice) and returns a new array with all elements except the last one.
-// If the input is not a slice or if the array is empty, the function returns an error.
-func initial(array interface{}) (interface{}, error) {
+// Initial returns a new array (Slice) containing all elements of the input array except the Last one.
+// The function accepts an array (Slice) and returns a new array with all elements except the Last one.
+// If the input is not a Slice or if the array is empty, the function returns an error.
+func Initial(array interface{}) (interface{}, error) {
 	arrValue := reflect.ValueOf(array)
 
 	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {

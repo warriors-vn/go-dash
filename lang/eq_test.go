@@ -7,31 +7,31 @@ import (
 )
 
 func Test_eq_valid_one(t *testing.T) {
-	result := eq(1, 1)
+	result := Eq(1, 1)
 
 	assert.Equal(t, true, result)
 }
 
 func Test_eq_valid_two(t *testing.T) {
-	result := eq(1, 2)
+	result := Eq(1, 2)
 
 	assert.Equal(t, false, result)
 }
 
 func Test_eq_valid_three(t *testing.T) {
-	result := eq(1.1, 1.1)
+	result := Eq(1.1, 1.1)
 
 	assert.Equal(t, true, result)
 }
 
 func Test_eq_valid_four(t *testing.T) {
-	result := eq(true, true)
+	result := Eq(true, true)
 
 	assert.Equal(t, true, result)
 }
 
 func Test_eq_valid_five(t *testing.T) {
-	result := eq("true", "true")
+	result := Eq("true", "true")
 
 	assert.Equal(t, true, result)
 }
@@ -42,7 +42,7 @@ func Test_eq_valid_six(t *testing.T) {
 		Age  int
 	}
 
-	result := eq(User{Name: "Vegeta", Age: 26}, User{Name: "Vegeta", Age: 26})
+	result := Eq(User{Name: "Vegeta", Age: 26}, User{Name: "Vegeta", Age: 26})
 
 	assert.Equal(t, true, result)
 }
@@ -53,7 +53,7 @@ func Test_eq_valid_seven(t *testing.T) {
 		Age  int
 	}
 
-	result := eq(&User{Name: "Vegeta", Age: 26}, &User{Name: "Vegeta", Age: 26})
+	result := Eq(&User{Name: "Vegeta", Age: 26}, &User{Name: "Vegeta", Age: 26})
 
 	assert.Equal(t, true, result)
 }
@@ -64,13 +64,13 @@ func Test_eq_valid_eight(t *testing.T) {
 		Age  int
 	}
 
-	result := eq(&User{Name: "Vegeta", Age: 27}, &User{Name: "Vegeta", Age: 26})
+	result := Eq(&User{Name: "Vegeta", Age: 27}, &User{Name: "Vegeta", Age: 26})
 
 	assert.Equal(t, false, result)
 }
 
 func Test_eq_invalid_type(t *testing.T) {
-	result := eq("true", true)
+	result := Eq("true", true)
 
 	assert.Equal(t, false, result)
 }

@@ -1,8 +1,8 @@
 package go_math
 
-// mean calculates the mean (average) value of a slice of float64 numbers.
-// It returns the mean value as a float64.
-func mean(array []float64) float64 {
+// Mean calculates the Mean (average) value of a slice of float64 numbers.
+// It returns the Mean value as a float64.
+func Mean(array []float64) float64 {
 	if len(array) == 0 {
 		return float64(0)
 	}

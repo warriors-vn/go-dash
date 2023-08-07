@@ -4,10 +4,10 @@ import (
 	"unicode"
 )
 
-// camelCase converts a string to camelCase format.
+// CamelCase converts a string to CamelCase format.
 // It capitalizes the first letter of each word (except the first word),
 // removes spaces and punctuation, and lower cases the rest of the letters.
-func camelCase(s string) string {
+func CamelCase(s string) string {
 	nextToUpper, result := false, ""
 
 	for _, char := range s {

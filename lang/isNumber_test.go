@@ -7,25 +7,25 @@ import (
 )
 
 func Test_isNumber_valid_one(t *testing.T) {
-	result := isNumber(1)
+	result := IsNumber(1)
 
 	assert.Equal(t, true, result)
 }
 
 func Test_isNumber_valid_two(t *testing.T) {
-	result := isNumber(uint(1))
+	result := IsNumber(uint(1))
 
 	assert.Equal(t, true, result)
 }
 
 func Test_isNumber_valid_three(t *testing.T) {
-	result := isNumber(1.1)
+	result := IsNumber(1.1)
 
 	assert.Equal(t, true, result)
 }
 
 func Test_isNumber_invalid(t *testing.T) {
-	result := isNumber(true)
+	result := IsNumber(true)
 
 	assert.Equal(t, false, result)
 }

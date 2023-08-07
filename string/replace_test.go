@@ -7,7 +7,7 @@ import (
 )
 
 func Test_replace_valid(t *testing.T) {
-	result := replace("Hi Fred", "Fred", "Barney")
+	result := Replace("Hi Fred", "Fred", "Barney")
 
 	assert.Equal(t, "Hi Barney", result)
 }

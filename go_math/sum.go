@@ -6,9 +6,9 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// sum calculates the sum of elements in a slice of numeric type.
-// It returns the sum as a float64.
-func sum(array interface{}) (float64, error) {
+// Sum calculates the Sum of elements in a slice of numeric type.
+// It returns the Sum as a float64.
+func Sum(array interface{}) (float64, error) {
 	arrValue := reflect.ValueOf(array)
 
 	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {

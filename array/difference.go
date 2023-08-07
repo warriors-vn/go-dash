@@ -6,10 +6,10 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// difference returns a new slice that contains the elements from the input array that are not present in the exclude slices.
+// Difference returns a new Slice that contains the elements from the input array that are not present in the exclude slices.
 // It takes an array-like data structure and one or more exclude slices.
-// The function returns the new slice of different elements and an error if any occurs.
-func difference(array interface{}, exclude ...interface{}) (interface{}, error) {
+// The function returns the new Slice of different elements and an error if any occurs.
+func Difference(array interface{}, exclude ...interface{}) (interface{}, error) {
 	arrValue := reflect.ValueOf(array)
 
 	if arrValue.Kind() != reflect.Slice && arrValue.Kind() != reflect.Array {

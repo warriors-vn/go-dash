@@ -2,8 +2,8 @@ package string
 
 import "strings"
 
-// lowerFirst converts the first letter of a string to lowercase while leaving the rest unchanged.
-func lowerFirst(s string) string {
+// LowerFirst converts the first letter of a string to lowercase while leaving the rest unchanged.
+func LowerFirst(s string) string {
 	if len(s) == 0 {
 		return s
 	}

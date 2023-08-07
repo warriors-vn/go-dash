@@ -6,10 +6,10 @@ import (
 	"github.com/warriors-vn/go-dash/constants"
 )
 
-// inRange checks if a given number is within the specified range [start, end).
+// InRange checks if a given number is within the specified range [start, end).
 // The function accepts three arguments: number, start, and end, all of type interface{}.
 // It returns a boolean indicating whether the number is within the range and an error if any issue occurs.
-func inRange(number, start interface{}, end ...interface{}) (bool, error) {
+func InRange(number, start interface{}, end ...interface{}) (bool, error) {
 	typeOfNumber, typeOfStart := reflect.TypeOf(number), reflect.TypeOf(start)
 
 	var endRange interface{}

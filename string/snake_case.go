@@ -2,9 +2,9 @@ package string
 
 import "unicode"
 
-// snakeCase converts a string to snake_case format.
+// SnakeCase converts a string to snake_case format.
 // It replaces spaces and punctuation with underscores and converts letters to lowercase.
-func snakeCase(s string) string {
+func SnakeCase(s string) string {
 	nextToSnakeCase, result := false, ""
 
 	for _, char := range s {
